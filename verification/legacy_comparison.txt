@@ -1,0 +1,6 @@
+Источник: SYNTHETIC DEMO (not customer data)
+Выбран по валидации: four_week_median
+last_same_weekday    val WAPE= 16.15%   test WAPE=25.88%   test MAE=340.98
+four_week_median     val WAPE= 15.77%   test WAPE=20.76%   test MAE=273.48
+gradient_boosting    val WAPE= 17.10%   test WAPE=20.74%   test MAE=273.23
+Файлы: comparison.html, comparison_test.csv, comparison_report.json

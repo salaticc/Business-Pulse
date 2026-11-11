@@ -1,0 +1,14 @@
+............                                                             [100%]
+============================== warnings summary ===============================
+tests/test_comparison.py::test_one_step_ahead_features_do_not_include_same_day_orders_or_aov
+tests/test_comparison.py::test_one_step_ahead_features_do_not_include_same_day_orders_or_aov
+tests/test_comparison.py::test_three_models_have_identical_holdout_rows
+tests/test_comparison.py::test_short_series_rejected
+tests/test_pipeline.py::test_future_values_cannot_change_earlier_features
+tests/test_pipeline.py::test_future_values_cannot_change_earlier_features
+tests/test_pipeline.py::test_demo_data_and_backtest_exist
+  <workspace>\business_pulse_ml\src\model.py:17: Pandas4Warning: Series.dt.dayofweek is deprecated and will be removed in a future version. Use Series.dt.day_of_week instead.
+    d["dow"] = d["date"].dt.dayofweek
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 7 warnings in 14.14s

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "cv_metrics.csv",
+    "sha256": "855d111e206b1a9af8ab07938b92aa78db251b29431e67a49138980f6a5cfb42",
+    "repeat_sha256": "855d111e206b1a9af8ab07938b92aa78db251b29431e67a49138980f6a5cfb42",
+    "identical": true
+  },
+  {
+    "file": "cv_predictions.csv",
+    "sha256": "4b773385d09337da3563b62fba81861ffae6900b8a03b9a2a03426d33e9d1983",
+    "repeat_sha256": "4b773385d09337da3563b62fba81861ffae6900b8a03b9a2a03426d33e9d1983",
+    "identical": true
+  },
+  {
+    "file": "evaluation.html",
+    "sha256": "5ae65d5358535cac79fe40e32d0209cb94257702a95dbc4ff698049130a3908b",
+    "repeat_sha256": "5ae65d5358535cac79fe40e32d0209cb94257702a95dbc4ff698049130a3908b",
+    "identical": true
+  },
+  {
+    "file": "evaluation_report.json",
+    "sha256": "bdc66423146c829f72e0ffc4ac399a45ff9362f3d689ffd606e82173fb7fe0e5",
+    "repeat_sha256": "bdc66423146c829f72e0ffc4ac399a45ff9362f3d689ffd606e82173fb7fe0e5",
+    "identical": true
+  },
+  {
+    "file": "final_test_predictions.csv",
+    "sha256": "1f3835a39979760a5c26c0b85e66831db90b3d4783787ac95e6a508f3530251d",
+    "repeat_sha256": "1f3835a39979760a5c26c0b85e66831db90b3d4783787ac95e6a508f3530251d",
+    "identical": true
+  }
+]

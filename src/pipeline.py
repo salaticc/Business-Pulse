@@ -12,10 +12,11 @@ def main():
     p.add_argument("--input", default="data/demo/daily_sales.csv")
     p.add_argument("--country", default="United Kingdom")
     p.add_argument("--output", default="outputs")
+    p.add_argument("--missing-days", choices=("error", "zero"), default="error")
     args = p.parse_args()
     out = Path(args.output)
     out.mkdir(parents=True, exist_ok=True)
-    daily, source_meta = load_daily(args.input, args.country)
+    daily, source_meta = load_daily(args.input, args.country, missing_days=args.missing_days)
     test, report = backtest(daily)
     report["source"] = source_meta
     report["caveats"] = [

@@ -1,0 +1,333 @@
+{
+  "version": "0.5",
+  "config": {
+    "n_splits": 3,
+    "validation_days": 28,
+    "test_days": 60,
+    "min_train_days": 60
+  },
+  "forecast_contract": {
+    "horizon_days": 1,
+    "prediction_time": "after prior trading day closure and confirmed complete ingestion, before target day t opens",
+    "features": [
+      "dow",
+      "month",
+      "day",
+      "is_weekend",
+      "lag_1",
+      "lag_7",
+      "lag_14",
+      "lag_21",
+      "lag_28",
+      "mean_7",
+      "mean_28",
+      "std_28"
+    ],
+    "actuals_available_through": "t-1",
+    "fit_policy": "once per expanding CV origin; once on all development before final test; frozen within windows",
+    "warmup_days": 28,
+    "native_threads": 1,
+    "revision": 2,
+    "lag_basis": "calendar days; non-trading dates require confirmed calendar status",
+    "operational_gate_implemented": false,
+    "historical_availability_verified": false,
+    "backtest_assumption": "complete calendar-day actuals through t-1; no as-of ingestion timestamps or historical source versions"
+  },
+  "selected_method": "four_week_median",
+  "selection_metric": "pooled out-of-fold WAPE, full precision; no test access",
+  "tie_break_order": [
+    "last_same_weekday",
+    "four_week_median",
+    "gradient_boosting"
+  ],
+  "development_dates": [
+    "2025-01-01",
+    "2025-08-08"
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "train_dates": [
+        "2025-01-29",
+        "2025-05-16"
+      ],
+      "validation_dates": [
+        "2025-05-17",
+        "2025-06-13"
+      ],
+      "n_train": 108,
+      "n_validation": 28,
+      "model_fit_through": "2025-05-16",
+      "metrics": {
+        "last_same_weekday": {
+          "mae": 213.22285714285718,
+          "rmse": 286.3865576828434,
+          "wape_pct": 16.175601995398406
+        },
+        "four_week_median": {
+          "mae": 164.75178571428575,
+          "rmse": 226.72997702585087,
+          "wape_pct": 12.498469204734253
+        },
+        "gradient_boosting": {
+          "mae": 187.01414524371708,
+          "rmse": 240.77945337191434,
+          "wape_pct": 14.187345679104341
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train_dates": [
+        "2025-01-29",
+        "2025-06-13"
+      ],
+      "validation_dates": [
+        "2025-06-14",
+        "2025-07-11"
+      ],
+      "n_train": 136,
+      "n_validation": 28,
+      "model_fit_through": "2025-06-13",
+      "metrics": {
+        "last_same_weekday": {
+          "mae": 234.89678571428573,
+          "rmse": 305.84944638428146,
+          "wape_pct": 18.263677327288676
+        },
+        "four_week_median": {
+          "mae": 190.85125,
+          "rmse": 234.98590928690354,
+          "wape_pct": 14.839052126279123
+        },
+        "gradient_boosting": {
+          "mae": 221.91530782404945,
+          "rmse": 258.21096347225443,
+          "wape_pct": 17.25434242856857
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train_dates": [
+        "2025-01-29",
+        "2025-07-11"
+      ],
+      "validation_dates": [
+        "2025-07-12",
+        "2025-08-08"
+      ],
+      "n_train": 164,
+      "n_validation": 28,
+      "model_fit_through": "2025-07-11",
+      "metrics": {
+        "last_same_weekday": {
+          "mae": 249.61999999999998,
+          "rmse": 297.91831668141134,
+          "wape_pct": 17.946989649621628
+        },
+        "four_week_median": {
+          "mae": 219.51517857142858,
+          "rmse": 255.88898848112407,
+          "wape_pct": 15.782536005753833
+        },
+        "gradient_boosting": {
+          "mae": 251.96932631515872,
+          "rmse": 292.95957580533764,
+          "wape_pct": 18.115899733195608
+        }
+      }
+    }
+  ],
+  "cv_pooled_metrics": {
+    "last_same_weekday": {
+      "mae": 232.57988095238102,
+      "rmse": 296.825688291566,
+      "wape_pct": 17.46448587838095
+    },
+    "four_week_median": {
+      "mae": 191.70607142857145,
+      "rmse": 239.51620298108475,
+      "wape_pct": 14.395260516749783
+    },
+    "gradient_boosting": {
+      "mae": 220.2995931276417,
+      "rmse": 264.8729002618622,
+      "wape_pct": 16.542355759389597
+    }
+  },
+  "cv_window_dispersion": {
+    "last_same_weekday": {
+      "mae": {
+        "mean": 232.579880952381,
+        "std_population": 14.949114528908124,
+        "min": 213.22285714285718,
+        "max": 249.61999999999998,
+        "defined_windows": 3
+      },
+      "rmse": {
+        "mean": 296.7181069161788,
+        "std_population": 7.99088592341556,
+        "min": 286.3865576828434,
+        "max": 305.84944638428146,
+        "defined_windows": 3
+      },
+      "wape_pct": {
+        "mean": 17.462089657436238,
+        "std_population": 0.9188255727569513,
+        "min": 16.175601995398406,
+        "max": 18.263677327288676,
+        "defined_windows": 3
+      }
+    },
+    "four_week_median": {
+      "mae": {
+        "mean": 191.70607142857145,
+        "std_population": 22.36523103781849,
+        "min": 164.75178571428575,
+        "max": 219.51517857142858,
+        "defined_windows": 3
+      },
+      "rmse": {
+        "mean": 239.20162493129283,
+        "std_population": 12.271679620382042,
+        "min": 226.72997702585087,
+        "max": 255.88898848112407,
+        "defined_windows": 3
+      },
+      "wape_pct": {
+        "mean": 14.37335244558907,
+        "std_population": 1.3805628883021732,
+        "min": 12.498469204734253,
+        "max": 15.782536005753833,
+        "defined_windows": 3
+      }
+    },
+    "gradient_boosting": {
+      "mae": {
+        "mean": 220.29959312764174,
+        "std_population": 26.542441328195913,
+        "min": 187.01414524371708,
+        "max": 251.96932631515872,
+        "defined_windows": 3
+      },
+      "rmse": {
+        "mean": 263.9833308831688,
+        "std_population": 21.689958712680866,
+        "min": 240.77945337191434,
+        "max": 292.95957580533764,
+        "defined_windows": 3
+      },
+      "wape_pct": {
+        "mean": 16.519195946956174,
+        "std_population": 1.6859645114986945,
+        "min": 14.187345679104341,
+        "max": 18.115899733195608,
+        "defined_windows": 3
+      }
+    }
+  },
+  "test_dates": [
+    "2025-08-09",
+    "2025-10-07"
+  ],
+  "test_evaluated": true,
+  "model_parameters": {
+    "categorical_features": "from_dtype",
+    "early_stopping": false,
+    "interaction_cst": null,
+    "l2_regularization": 10.0,
+    "learning_rate": 0.055,
+    "loss": "squared_error",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 12,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "quantile": null,
+    "random_state": 42,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "reproducibility": {
+    "python": "3.14.2",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "threadpoolctl": "3.8.0",
+      "plotly": "7.1.0",
+      "openpyxl": "3.1.5"
+    },
+    "development_sha256": "016916ec5c917a2596355b27f94700e2ff956b98cdf635604c2deb2596838ffa",
+    "input_sha256": "ae4a072026f9870128bcd7f2dc0452d098adca2ca6ba3bc3f668241d1df60002",
+    "code_sha256": {
+      "requirements-lock.txt": "c8e491fc6b5329b1cee5895c8255c885849a6ca41cefd535cb7f267467d5f265",
+      "requirements.txt": "9f8caddfb74766e04cfc1c3bb8cab8f2038612b863e41dc4d645840822bf897f",
+      "scripts/compare_models.py": "14c6cfb056fc4b58ef2709739bf012395e586ba70c0dbe89fe0e327576f9229d",
+      "scripts/evaluate.py": "e8bc4f9c8484c8895b986d364db36a4f888a4c4e9ff92d13ae88442f557d027b",
+      "scripts/make_demo.py": "71dfee5d8d39027a607c8f4cabc5bcd4f82a14512cbcb40dcf387a6c06dacbbf",
+      "scripts/notify.py": "e582b385f8dc549a0ffd308bc9d962d5bc5f925b7df5be85323df63c9d572e84",
+      "src/__init__.py": "e45d406ec642dd9ee6ba75165daddcd06ae70a63c3bd68619b5bf548fa011021",
+      "src/data.py": "d20611f67b80aaa783672cbc3fde26ce4e9070bdeb08125e4b7b6580fdebc78a",
+      "src/evaluation.py": "027996f72005be25e874e9db9e0e4507a7df98ac775bce87055377ecc8e719d4",
+      "src/model.py": "656dc75acb84070fc3356b24d246414a3bc0206982cb85ed6e64ecc36490d23e",
+      "src/notifications.py": "0c6b99b59fd6780795950b554076e964da63a87d4a4cb1441d884c8e5083df02",
+      "src/pipeline.py": "44b8c2fa49da249f6eb27c617771e231ab741284cdc1e89fcbc92ca6a7c14b6f",
+      "src/visualize.py": "45d91ef3d7dc1962942f4771f941b4a00b636407d21a035dcf81902c5f613c60"
+    }
+  },
+  "limitations": [
+    "Bundled demo is synthetic; raw UCI transactions are not bundled. Conclusions apply only to the supplied source.",
+    "If using the bundled demo: v0.4 final-test results were already published; this is a code-isolated holdout, not a previously unseen experiment.",
+    "Only a few correlated time windows; dispersion is descriptive, not a confidence interval or proof of significance.",
+    "Daily source completeness / opening calendar are not inferable from sales alone.",
+    "No incident labels: forecast errors do not establish alert precision/recall, causes, financial loss or profit."
+  ],
+  "final_fit_dates": [
+    "2025-01-29",
+    "2025-08-08"
+  ],
+  "final_fit_rows": 192,
+  "test_metrics": {
+    "last_same_weekday": {
+      "mae": 340.9776666666667,
+      "rmse": 459.1237141773446,
+      "wape_pct": 25.884806584432962
+    },
+    "four_week_median": {
+      "mae": 273.4789166666667,
+      "rmse": 375.2327864678361,
+      "wape_pct": 20.760740526027387
+    },
+    "gradient_boosting": {
+      "mae": 273.225601883955,
+      "rmse": 353.25238401019317,
+      "wape_pct": 20.74151051539482
+    }
+  },
+  "selected_test_metrics": {
+    "mae": 273.4789166666667,
+    "rmse": 375.2327864678361,
+    "wape_pct": 20.760740526027387
+  },
+  "source": {
+    "source": "SYNTHETIC DEMO (not customer data)",
+    "currency": "arbitrary units",
+    "country": "n/a",
+    "source_kind": "synthetic",
+    "days": 280,
+    "zero_order_days": 1,
+    "missing_days_policy": "error",
+    "assumed_zero_dates": [],
+    "completeness_verified": false,
+    "quality_note": "Daily continuity cannot establish ingestion completeness or distinguish closures; source edges may be partial."
+  }
+}

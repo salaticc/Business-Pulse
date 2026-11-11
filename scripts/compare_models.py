@@ -53,6 +53,8 @@ def compare(daily: pd.DataFrame, validation_days: int = 35, test_days: int = 60)
     val_model = new_model().fit(train[FEATURES], train["revenue"])
     val["gradient_boosting"] = np.maximum(0, val_model.predict(val[FEATURES]))
     scores_val = {name: metrics(val["revenue"], val[name]) for name in METHODS}
+    if scores_val[METHODS[0]]["wape_pct"] is None:
+        raise ValueError("WAPE не определён: выручка validation равна нулю")
 
     # Choose on validation alone. No tuning using test scores.
     selected = min(METHODS, key=lambda name: scores_val[name]["wape_pct"])
@@ -117,15 +119,18 @@ def main():
     parser.add_argument("--input", default="data/demo/daily_sales.csv")
     parser.add_argument("--country", default="United Kingdom")
     parser.add_argument("--output", default="outputs")
+    parser.add_argument("--missing-days", choices=("error", "zero"), default="error")
     args = parser.parse_args()
-    daily, source = load_daily(args.input, args.country)
+    daily, source = load_daily(args.input, args.country, missing_days=args.missing_days)
     val, test, report = compare(daily)
     report["source"] = source
     save_results(val, test, report, Path(args.output))
     print("Источник:", source["source"])
     print("Выбран по валидации:", report["selected_method"])
     for name in METHODS:
-        print(f"{name:20s} val WAPE={report['validation_metrics'][name]['wape_pct']:6.2f}%   test WAPE={report['test_metrics'][name]['wape_pct']:6.2f}%   test MAE={report['test_metrics'][name]['mae']:.2f}")
+        wape = report['test_metrics'][name]['wape_pct']
+        test_wape = f"{wape:.2f}%" if wape is not None else "undefined"
+        print(f"{name:20s} val WAPE={report['validation_metrics'][name]['wape_pct']:6.2f}%   test WAPE={test_wape}   test MAE={report['test_metrics'][name]['mae']:.2f}")
     print("Файлы: comparison.html, comparison_test.csv, comparison_report.json")
 
 

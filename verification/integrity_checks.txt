@@ -1,0 +1,4 @@
+All 5 evaluation artifacts are byte-identical across two CLI runs.
+Validation-only selection / CV match the full run.
+Baseline copy source files match the original v0.4 ZIP byte-for-byte.
+No broken requirements found.

@@ -1,0 +1,7 @@
+Источник: SYNTHETIC DEMO (not customer data)
+Выбранный подход (по валидации): weekday_baseline
+TEST WAPE baseline: 20.760740526027387 %
+TEST WAPE ML: 20.74151051539482 %
+Дней с предупреждениями: 8
+Отчёт: outputs\legacy_pipeline\dashboard.html
+Разбор причин и бизнес-решения — ВАШ следующий этап, см. TALENT_TEST.md
