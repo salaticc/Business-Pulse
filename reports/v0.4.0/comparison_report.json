@@ -1,0 +1,82 @@
+{
+  "warning": "Educational evaluation. Demo dataset is synthetic; test metrics are not production performance.",
+  "forecast_horizon": "one-day-ahead, using actual prior-day history for each evaluated day",
+  "target": "daily revenue (not profit, not loss)",
+  "data_available_at_prediction": [
+    "calendar",
+    "revenue through yesterday",
+    "aggregates of past revenue"
+  ],
+  "prohibited_future_features": [
+    "today's actual orders",
+    "today's actual average order value",
+    "today's actual advertising spend"
+  ],
+  "training_dates": [
+    "2025-01-29",
+    "2025-07-04"
+  ],
+  "validation_dates": [
+    "2025-07-05",
+    "2025-08-08"
+  ],
+  "test_dates": [
+    "2025-08-09",
+    "2025-10-07"
+  ],
+  "n_days": {
+    "train": 157,
+    "validation": 35,
+    "test": 60
+  },
+  "selection_metric": "WAPE on validation only",
+  "selected_method": "four_week_median",
+  "validation_metrics": {
+    "last_same_weekday": {
+      "mae": 222.43,
+      "rmse": 274.82,
+      "wape_pct": 16.15
+    },
+    "four_week_median": {
+      "mae": 217.1,
+      "rmse": 249.77,
+      "wape_pct": 15.77
+    },
+    "gradient_boosting": {
+      "mae": 235.42,
+      "rmse": 275.21,
+      "wape_pct": 17.1
+    }
+  },
+  "test_metrics": {
+    "last_same_weekday": {
+      "mae": 340.98,
+      "rmse": 459.12,
+      "wape_pct": 25.88
+    },
+    "four_week_median": {
+      "mae": 273.48,
+      "rmse": 375.23,
+      "wape_pct": 20.76
+    },
+    "gradient_boosting": {
+      "mae": 273.23,
+      "rmse": 353.25,
+      "wape_pct": 20.74
+    }
+  },
+  "note": "Features for one-step-ahead test use actual history up to preceding day; not a 60-day forecast from test start.",
+  "limitations": [
+    "No verified labels for true operational incidents; alert precision/recall cannot be calculated.",
+    "Source may contain zeros caused by closures or incomplete data, which need separate checks.",
+    "Comparing predictions cannot prove causality or financial loss.",
+    "Single chronological split; further rolling-origin cross-validation and drift analysis needed."
+  ],
+  "source": {
+    "source": "SYNTHETIC DEMO (not customer data)",
+    "currency": "arbitrary units",
+    "country": "n/a",
+    "days": 280,
+    "zero_order_days": 1
+  }
+}

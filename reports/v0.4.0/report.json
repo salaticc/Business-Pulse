@@ -1,0 +1,61 @@
+{
+  "evaluation": "one-step-ahead rolling historical predictions; daily lag features use actual past observations",
+  "selection_basis": "validation WAPE only",
+  "selected_predictor": "weekday_baseline",
+  "train_dates": [
+    "2025-01-29",
+    "2025-07-04"
+  ],
+  "validation_dates": [
+    "2025-07-05",
+    "2025-08-08"
+  ],
+  "test_dates": [
+    "2025-08-09",
+    "2025-10-07"
+  ],
+  "validation": {
+    "ml": {
+      "mae": 235.42,
+      "rmse": 275.21,
+      "wape_pct": 17.1
+    },
+    "weekday_baseline": {
+      "mae": 217.1,
+      "rmse": 249.77,
+      "wape_pct": 15.77
+    }
+  },
+  "test": {
+    "ml": {
+      "mae": 273.23,
+      "rmse": 353.25,
+      "wape_pct": 20.74
+    },
+    "weekday_baseline": {
+      "mae": 273.48,
+      "rmse": 375.23,
+      "wape_pct": 20.76
+    }
+  },
+  "alert_calibration": {
+    "min_relative_drop_pct": 25,
+    "absolute_shortfall_threshold_from_validation": 290.29,
+    "calibration_method": "90th percentile of one-sided shortfalls on validation; heuristic, not a statistical guarantee",
+    "alert_days_test": 8
+  },
+  "source": {
+    "source": "SYNTHETIC DEMO (not customer data)",
+    "currency": "arbitrary units",
+    "country": "n/a",
+    "days": 280,
+    "zero_order_days": 1
+  },
+  "caveats": [
+    "Прогноз ожидаемых продаж не доказывает потери дохода или причинное влияние события.",
+    "Выручка UCI — сумма положительных товарных строк, без возвратов и себестоимости.",
+    "Нули могут означать выходной, сбой выгрузки или отсутствие транзакций.",
+    "Датасет UCI 2010–2011 гг. и не представляет российский рынок 2026 года.",
+    "Алерты не имеют исторических меток инцидентов: precision/recall пока неизвестны."
+  ]
+}

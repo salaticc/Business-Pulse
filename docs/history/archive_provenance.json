@@ -1,0 +1,25 @@
+{
+  "history_note": "Milestones reconstructed from supplied ZIP snapshots on 2026-11-11; commits are not backdated.",
+  "layout_note": "Historical outputs relocated to reports/vX.Y.Z; local test log paths sanitized. Python source bytes unchanged.",
+  "snapshots": {
+    "v0.4.0": {
+      "archive": "business_pulse_v04.zip",
+      "archive_sha256": "839b40b184947bc690b4878a5a9bdf582e311e1368e3aecd88be33ce7953f80a",
+      "imported_files": 32,
+      "python_sha256": {
+        "tests/test_comparison.py": "cd0ebb2dfd2d1a22e2e477ddf16391326dbb498e2b6e9928adb10288f0001f2b",
+        "tests/test_pipeline.py": "98ba20a054df531ce878715325baa609245f680ae59c995dbe34255ccca16493",
+        "tests/test_notifications.py": "5de99e0bae9bdf48a376059af93b6ce98465757b426e3d1193e859d01432dab2",
+        "scripts/notify.py": "e582b385f8dc549a0ffd308bc9d962d5bc5f925b7df5be85323df63c9d572e84",
+        "scripts/make_demo.py": "71dfee5d8d39027a607c8f4cabc5bcd4f82a14512cbcb40dcf387a6c06dacbbf",
+        "scripts/compare_models.py": "de30743c08dc2459a8f181eeb3d9cc45e6cec6092188124e4d8aa37f2cf09110",
+        "src/__init__.py": "e45d406ec642dd9ee6ba75165daddcd06ae70a63c3bd68619b5bf548fa011021",
+        "src/pipeline.py": "273a62299c014dfdac70762c1acfb8077b69180b175a01bb11e2b97ecbccc0e3",
+        "src/notifications.py": "0c6b99b59fd6780795950b554076e964da63a87d4a4cb1441d884c8e5083df02",
+        "src/visualize.py": "45d91ef3d7dc1962942f4771f941b4a00b636407d21a035dcf81902c5f613c60",
+        "src/data.py": "4b90bc47bc12b2190aa001b86e937ca3303f8a54b23ef59ca7d57543f0e5ff37",
+        "src/model.py": "193d629858f2f73b0947c82348793a1a85a8cf86b5d5bc3a547947951fd92bdf"
+      }
+    }
+  }
+}

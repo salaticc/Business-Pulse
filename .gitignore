@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.venv/
+outputs/*
+!outputs/.gitkeep
+data/raw/*
+!data/raw/README.md
+*.pyc
+.env
+.env.*
+!.env.example
+local_state/
