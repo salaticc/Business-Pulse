@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }}, Python 3.14)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version-file: .python-version
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+      - name: Install dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Check published repository contents
+        run: python -m scripts.check_repository
+      - name: Run tests
+        run: python -m pytest -q
+      - name: Reproduce synthetic data
+        run: python -m scripts.make_incident_demo --output .ci-data
+      - name: Choose on validation only
+        run: python -m scripts.evaluate_alerts --observations .ci-data/observations.csv --labels .ci-data/labels.csv --validation-only --output outputs/ci-validation
+      - name: Evaluate the frozen choice
+        run: python -m scripts.evaluate_alerts --observations .ci-data/observations.csv --labels .ci-data/labels.csv --output outputs/ci-full
+      - name: Check numerical regression
+        run: python -m scripts.verify_experiment --report outputs/ci-full/alert_report.json

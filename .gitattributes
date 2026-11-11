@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+# Preserve byte-exact historical experiment evidence and the captured lockfile.
+requirements-lock.txt -text
+reports/** -text
+verification/** -text
+data/synthetic_incidents/manifest.json -text
+docs/history/archive_provenance.json -text
+
+*.png binary
+*.jpg binary
+*.xlsx binary
+*.zip binary

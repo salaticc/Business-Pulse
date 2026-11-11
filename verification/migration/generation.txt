@@ -1,0 +1,2 @@
+SYNTHETIC educational simulation; not real customer incidents
+Созданы observations.csv, labels.csv, latent_daily.csv, manifest.json в .ci-data

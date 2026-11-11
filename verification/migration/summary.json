@@ -1,0 +1,28 @@
+{
+  "historical_tests": {
+    "v0.4.0": "12 passed, 7 warnings",
+    "v0.5.0": "53 passed",
+    "v0.6.0": "104 passed"
+  },
+  "guard_probes": [
+    {
+      "probe": "local_state/_guard_probe.json",
+      "rejected": true,
+      "expected": "local/private artifact"
+    },
+    {
+      "probe": "docs/_guard_probe.txt",
+      "rejected": true,
+      "expected": "github_token"
+    },
+    {
+      "probe": "VERSION",
+      "rejected": true,
+      "expected": "VERSION missing from CHANGELOG"
+    }
+  ],
+  "original_v06_python_files_byte_identical": true,
+  "numerical_alert_regression": "matches published v0.6.0 fixture",
+  "source_environment": "existing Python 3.14.2 / captured requirements-lock.txt",
+  "ci": "See live GitHub Actions status; local checks do not claim hosted execution."
+}

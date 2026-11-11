@@ -10,3 +10,23 @@ data/raw/*
 .env.*
 !.env.example
 local_state/
+
+# Working data, generated experiments and local tooling stay outside history.
+.ci-data/
+.local/
+.coverage
+htmlcov/
+.ruff_cache/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.log
+*.sqlite*
+*.db
+*.pkl
+*.pickle
+*.joblib
+*.pem
+*.key
+*.zip
+!.github/
