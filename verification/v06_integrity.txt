@@ -1,0 +1,5 @@
+Seven artifacts byte-identical across two complete CLI runs.
+Validation-only and full-run selection match; source and dataset hashes verified.
+All 16 v0.5 Python source/test files unchanged byte-for-byte versus reviewed archive.
+HTML parsed: three tables, thresholds / outcomes / daily journal present.
+No broken requirements found.

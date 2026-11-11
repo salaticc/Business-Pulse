@@ -43,6 +43,36 @@
         "tests/test_notifications.py": "5de99e0bae9bdf48a376059af93b6ce98465757b426e3d1193e859d01432dab2",
         "tests/test_pipeline.py": "98ba20a054df531ce878715325baa609245f680ae59c995dbe34255ccca16493"
       }
+    },
+    "v0.6.0": {
+      "archive": "business_pulse_v06.zip",
+      "archive_sha256": "60a13d021d6fbe3b93887086e0aaca547b524393c9179e02d20c9b3baff545ec",
+      "imported_files": 79,
+      "python_sha256": {
+        "scripts/compare_models.py": "14c6cfb056fc4b58ef2709739bf012395e586ba70c0dbe89fe0e327576f9229d",
+        "scripts/evaluate.py": "e8bc4f9c8484c8895b986d364db36a4f888a4c4e9ff92d13ae88442f557d027b",
+        "scripts/evaluate_alerts.py": "2e1d4f74a2f7062b82e0a6f983c2a651f9d29f1169634b26d9fe00761d93d0c6",
+        "scripts/make_demo.py": "71dfee5d8d39027a607c8f4cabc5bcd4f82a14512cbcb40dcf387a6c06dacbbf",
+        "scripts/make_incident_demo.py": "0069252538b85b0fbf52004de3389d414317507f97d5e06691ad9794c4dff6c3",
+        "scripts/notify.py": "e582b385f8dc549a0ffd308bc9d962d5bc5f925b7df5be85323df63c9d572e84",
+        "src/__init__.py": "e45d406ec642dd9ee6ba75165daddcd06ae70a63c3bd68619b5bf548fa011021",
+        "src/alert_evaluation.py": "2915e560adf449ce32c22993f8d08c72a1f82dde3ceb931bcbdc18d80abba4cb",
+        "src/alerts.py": "74500acb4849b1a37d410eaa15824c78872154ec762f10d5dcd29f2e78940916",
+        "src/data.py": "d20611f67b80aaa783672cbc3fde26ce4e9070bdeb08125e4b7b6580fdebc78a",
+        "src/evaluation.py": "027996f72005be25e874e9db9e0e4507a7df98ac775bce87055377ecc8e719d4",
+        "src/model.py": "656dc75acb84070fc3356b24d246414a3bc0206982cb85ed6e64ecc36490d23e",
+        "src/notifications.py": "0c6b99b59fd6780795950b554076e964da63a87d4a4cb1441d884c8e5083df02",
+        "src/pipeline.py": "44b8c2fa49da249f6eb27c617771e231ab741284cdc1e89fcbc92ca6a7c14b6f",
+        "src/synthetic_incidents.py": "220fb79f732dc6f71e89cda1c8bbf93218ee6dac951d38c4b4a32878c478fb23",
+        "src/visualize.py": "45d91ef3d7dc1962942f4771f941b4a00b636407d21a035dcf81902c5f613c60",
+        "tests/test_alert_experiment.py": "a8643403b3a7656449d97cbd2631a502cd8320220120af65323802a0503d1f63",
+        "tests/test_alerts.py": "c6856b59e42d9d5a29ce8f4c4318624107bfbccab3b6b0347cc0c9c433094a03",
+        "tests/test_comparison.py": "cd0ebb2dfd2d1a22e2e477ddf16391326dbb498e2b6e9928adb10288f0001f2b",
+        "tests/test_data_quality.py": "4d23d0eeb7338f08aa042c242c83b8f41c66ba0de41882d02766d23f57a4b7b6",
+        "tests/test_evaluation.py": "e4274b3b2619fddfa01a2fcc4a394651938da3f1f62d0e613362258d59826db7",
+        "tests/test_notifications.py": "5de99e0bae9bdf48a376059af93b6ce98465757b426e3d1193e859d01432dab2",
+        "tests/test_pipeline.py": "98ba20a054df531ce878715325baa609245f680ae59c995dbe34255ccca16493"
+      }
     }
   }
 }

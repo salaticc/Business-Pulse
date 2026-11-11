@@ -1,5 +1,24 @@
 # G-Analytics · Business Pulse ML
 
+**v0.6 — Alert Intelligence:** локальные правила отклонений, допуск по
+полноте/актуальности данных, приоритеты, подавление повторов, синтетическая
+разметка и выбор порога по стоимости ошибок только на validation.
+Команды, формат данных и объяснения: [ALERT_INTELLIGENCE.md](ALERT_INTELLIGENCE.md).
+Аудит: [AUDIT_V06.md](AUDIT_V06.md). Результаты: [REPORT_V06.md](REPORT_V06.md).
+Новые команды не отправляют Telegram-сообщений.
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.make_incident_demo
+.\.venv\Scripts\python.exe -m scripts.evaluate_alerts --validation-only --output outputs/v06_validation
+.\.venv\Scripts\python.exe -m scripts.evaluate_alerts --output outputs/v06
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+Открыть `outputs/v06/alert_report.html`. Все Precision/Recall/F1 v0.6
+относятся только к искусственно размеченным случаям. Числа затрат —
+назначенные учебные предпочтения, а не оценка реального ущерба.
+Существующие интерфейсы и методология v0.5 ниже сохранены.
+
 **v0.5 — ML Evaluation.** Добавлена последовательная временная
 кросс-валидация; прежние pipeline, compare_models и Telegram preview
 сохранены. Аудит: [AUDIT_V05.md](AUDIT_V05.md), фактические проверки и

@@ -1,0 +1,17 @@
+split,stream_id,incident_id,start_date,end_date,severity,miss_cost,detected,business_warnings,first_warning_date,detection_delay_days,incurred_miss_cost
+validation,synthetic_shop,SYN-validation-000,2024-09-02,2024-09-03,major,45.0,True,1,2024-09-02,0.0,0.0
+validation,synthetic_shop,SYN-validation-001,2024-09-14,2024-09-15,major,56.25,True,1,2024-09-14,0.0,0.0
+validation,synthetic_shop,SYN-validation-002,2024-09-26,2024-09-28,mild,15.0,True,1,2024-09-27,1.0,0.0
+validation,synthetic_shop,SYN-validation-003,2024-10-07,2024-10-08,major,45.0,True,2,2024-10-07,0.0,0.0
+validation,synthetic_shop,SYN-validation-004,2024-10-17,2024-10-18,major,33.75,True,1,2024-10-17,0.0,0.0
+validation,synthetic_shop,SYN-validation-005,2024-10-28,2024-10-29,critical,112.5,True,1,2024-10-28,0.0,0.0
+validation,synthetic_shop,SYN-validation-006,2024-11-09,2024-11-09,major,33.75,True,1,2024-11-09,0.0,0.0
+validation,synthetic_shop,SYN-validation-007,2024-11-16,2024-11-16,mild,18.75,False,0,,,18.75
+test,synthetic_shop,SYN-test-000,2024-12-01,2024-12-02,major,56.25,True,2,2024-12-01,0.0,0.0
+test,synthetic_shop,SYN-test-001,2024-12-13,2024-12-14,major,33.75,True,1,2024-12-13,0.0,0.0
+test,synthetic_shop,SYN-test-002,2024-12-25,2024-12-27,critical,187.5,True,1,2024-12-26,1.0,0.0
+test,synthetic_shop,SYN-test-003,2025-01-02,2025-01-02,mild,15.0,False,0,,,15.0
+test,synthetic_shop,SYN-test-004,2025-01-08,2025-01-10,major,56.25,True,1,2025-01-08,0.0,0.0
+test,synthetic_shop,SYN-test-005,2025-01-20,2025-01-20,mild,11.25,True,1,2025-01-20,0.0,0.0
+test,synthetic_shop,SYN-test-006,2025-01-30,2025-02-01,major,45.0,True,1,2025-01-30,0.0,0.0
+test,synthetic_shop,SYN-test-007,2025-02-12,2025-02-13,major,45.0,True,1,2025-02-12,0.0,0.0

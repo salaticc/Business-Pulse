@@ -1,0 +1,10 @@
+INFO Fold 1: train through 2025-05-16, validate ['2025-05-17', '2025-06-13']
+INFO Fold 2: train through 2025-06-13, validate ['2025-06-14', '2025-07-11']
+INFO Fold 3: train through 2025-07-11, validate ['2025-07-12', '2025-08-08']
+Источник: SYNTHETIC DEMO (not customer data)
+Выбран по CV: four_week_median
+last_same_weekday: CV WAPE=17.4645%
+four_week_median: CV WAPE=14.3953%
+gradient_boosting: CV WAPE=16.5424%
+Финальный тест: не оценивался
+Отчёт: outputs\v05_compat_v06\evaluation.html

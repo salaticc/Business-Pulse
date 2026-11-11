@@ -1,0 +1,44 @@
+[
+  {
+    "file": "alert_report.html",
+    "sha256": "bd7f22f0bc60dcac305280711724edc48c1b6814715d60070b8f68afd4098b51",
+    "repeat_sha256": "bd7f22f0bc60dcac305280711724edc48c1b6814715d60070b8f68afd4098b51",
+    "identical": true
+  },
+  {
+    "file": "alert_report.json",
+    "sha256": "a490dd62d545e4b0b89ffaa2a9c81481220b92b0e2f78d5b797d7e6a3c5aed34",
+    "repeat_sha256": "a490dd62d545e4b0b89ffaa2a9c81481220b92b0e2f78d5b797d7e6a3c5aed34",
+    "identical": true
+  },
+  {
+    "file": "incident_journal.csv",
+    "sha256": "3442fe02158e7f95586a444eccee403ee31be3654b171acd6c3cb84e7f1e1b95",
+    "repeat_sha256": "3442fe02158e7f95586a444eccee403ee31be3654b171acd6c3cb84e7f1e1b95",
+    "identical": true
+  },
+  {
+    "file": "incident_journal.jsonl",
+    "sha256": "8678c72578fe5b14647ca5734c303c6e18508474ee094b7f6400d5734f519b8c",
+    "repeat_sha256": "8678c72578fe5b14647ca5734c303c6e18508474ee094b7f6400d5734f519b8c",
+    "identical": true
+  },
+  {
+    "file": "incident_outcomes.csv",
+    "sha256": "841c31b2a1a2b92602f5f4888bdf1bedf12ebf6fe50d96e36f4e28905ceee5e1",
+    "repeat_sha256": "841c31b2a1a2b92602f5f4888bdf1bedf12ebf6fe50d96e36f4e28905ceee5e1",
+    "identical": true
+  },
+  {
+    "file": "monitor_state.json",
+    "sha256": "c8ac9ce43ca9f9f803fabbea1c5d4776fde206eea49b38a404f16304bd19937e",
+    "repeat_sha256": "c8ac9ce43ca9f9f803fabbea1c5d4776fde206eea49b38a404f16304bd19937e",
+    "identical": true
+  },
+  {
+    "file": "threshold_comparison.csv",
+    "sha256": "9a20fd9800275ff2f49dbd3999b819c5057a567f86c1ce7cfd7ddf6be88cfdd9",
+    "repeat_sha256": "9a20fd9800275ff2f49dbd3999b819c5057a567f86c1ce7cfd7ddf6be88cfdd9",
+    "identical": true
+  }
+]

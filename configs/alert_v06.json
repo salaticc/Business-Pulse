@@ -1,0 +1,10 @@
+{
+  "relative_drop_pct": [15, 25, 35, 45],
+  "absolute_shortfall": [100, 250, 500],
+  "cooldown_days": 7,
+  "max_data_age_hours": 24,
+  "high_drop_pct": 40,
+  "critical_drop_pct": 65,
+  "false_alert_cost": 3,
+  "miss_cost_by_severity": {"mild": 15, "major": 45, "critical": 150}
+}

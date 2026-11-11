@@ -1,0 +1,37 @@
+{
+  "source": "SYNTHETIC educational simulation; not real customer incidents",
+  "config": {
+    "seed": 20261111,
+    "train_days": 240,
+    "validation_days": 90,
+    "test_days": 90
+  },
+  "miss_cost_by_severity": {
+    "mild": 15,
+    "major": 45,
+    "critical": 150
+  },
+  "forecast_method": "v0.5 selected four-week median, frozen before this experiment",
+  "label_mechanism": "exogenous simulated service interventions, independent of residual thresholds",
+  "trading_calendar": "08:00-22:00 UTC every day; late actuals complete after forecast cutoff",
+  "split_dates": {
+    "train": [
+      "2024-01-01",
+      "2024-08-27"
+    ],
+    "validation": [
+      "2024-08-28",
+      "2024-11-25"
+    ],
+    "test": [
+      "2024-11-26",
+      "2025-02-23"
+    ]
+  },
+  "limitations": "Invented incident mix, times and costs; same-generator test is not commercial validation.",
+  "sha256": {
+    "observations.csv": "0531a5e4e717aec19ed26250a760932623baf842700dd031eb01dd8bb4ddbaee",
+    "labels.csv": "45eac51ea78249ac6cda57ef5f66350fe898fe472ea291845e598f1594185181",
+    "latent_daily.csv": "5d5d965f8a042a5edf829917ddf2fd413d97e64037f746ad9a3a8feab631e8e6"
+  }
+}
